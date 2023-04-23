@@ -1,7 +1,7 @@
 
-import Header from './Components/Header';
-import Home from './Components/Home';
-import Cart from './Components/Cart'
+import Header from './Components/Home/Header'
+import Home from './Components/Home/Home'
+import Cart from './Components/Cart/Cart'
 import './App.css'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 function App() {

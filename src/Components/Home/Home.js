@@ -1,8 +1,7 @@
-import { CartState } from "../Context/Context";
+import { CartState } from "../../Context/Context";
 import SingleProduct from "./SingleProduct";
 import "./Home.css";
 import Filters from "./Filters";
-import { FaSortNumericDown } from "react-icons/fa";
 const Home = () => {
   const {
     state: { products },

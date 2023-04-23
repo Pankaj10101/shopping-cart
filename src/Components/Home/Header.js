@@ -9,8 +9,8 @@ import {
   Badge,
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { CartState } from "../Context/Context";
-import InsideCart from "./InsideCart";
+import { CartState } from "../../Context/Context";
+import InsideCart from '../Cart/InsideCart'
 const Header = () => {
   const {
     state: { cart }, dispatch, productDispatch
