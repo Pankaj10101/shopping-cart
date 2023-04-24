@@ -44,12 +44,12 @@ const Header = () => {
           />
         </Navbar.Text>
         <Nav>
-          <Dropdown align='start' >
+          <Dropdown  >
             <Dropdown.Toggle variant="success">
               <FaCartPlus color="white" fontSize="25px" />
               <Badge bg="none">{cart.length}</Badge>
             </Dropdown.Toggle>
-            <Dropdown.Menu align='start'   style={{ minWidth: 270 }}>{cart.length > 0 ? (
+            <Dropdown.Menu className="dropdown-menu-start" style={{ minWidth: 260 }}>{cart.length > 0 ? (
                 <InsideCart cartData={cart} removeItem={removeItemFromCart} />
               ) : (
                 <span style={{ padding: 10 }}>Cart is Empty</span>

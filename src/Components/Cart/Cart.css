@@ -1,3 +1,29 @@
-.summary{
+
+  
+  .summary {
     width: 30%;
-}
+  }
+  .home {
+    padding: 20px;
+  }
+  
+  
+  .summary button {
+    background-color: #f0c040;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .summary button:disabled {
+    background-color: #ddd;
+    color: #999;
+    cursor: not-allowed;
+  }
+  
+
+  

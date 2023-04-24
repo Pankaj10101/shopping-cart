@@ -5,18 +5,26 @@ import { cartReducer, productReducer } from "./Reducer";
 const Cart = createContext();
 
 const Context = (props) => {
+  const getCartData = () => {
+    const cart = localStorage.getItem("cart");
+    if (cart) {
+      return JSON.parse(cart);
+    } else {
+      return [];
+    }
+  };
+
   const [state, dispatch] = useReducer(cartReducer, {
     products: [],
-    cart: [],
+    cart: getCartData(),
   });
 
-  const [productState, productDispatch]= useReducer(productReducer, {
-    byStock:false,
-    byFastDelievery:false,
-    byRating:0,
-    searchQuery:""
-  })
-  
+  const [productState, productDispatch] = useReducer(productReducer, {
+    byStock: false,
+    byFastDelievery: false,
+    byRating: 0,
+    searchQuery: "",
+  });
 
   useEffect(() => {
     axios
@@ -41,8 +49,16 @@ const Context = (props) => {
       });
   }, []);
 
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(state.cart));
+  }, [state.cart]);
+
   return (
-    <Cart.Provider value={{ state, dispatch, productState, productDispatch }}>{props.children}</Cart.Provider>
+    <Cart.Provider
+      value={{ state, dispatch, productState, productDispatch }}
+    >
+      {props.children}
+    </Cart.Provider>
   );
 };
 

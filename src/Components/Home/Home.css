@@ -58,4 +58,11 @@
     .products{
         width: 100%;
     }
+    .dropdown-menu{
+        position: absolute;
+        
+
+        transform: translate(-66%);
+    }
 }
+
